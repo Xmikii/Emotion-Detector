@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Detector</title>
+</head>
+<body>
+    <h1>Emotion Detector using Flask</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Upload Image">
+    </form>
+    <br>
+    {% if detected_emotion %}
+    <h2>Detected Emotion:</h2>
+    <p>{{ detected_emotion }}</p>
+    <img src="{{ detected_image }}" width="400">
+    {% endif %}
+</body>
+</html>
